@@ -24,9 +24,9 @@ class SessionViewController: UIViewController {
         view.backgroundColor = .lightGray
         analyzeRequest()
         
-//        Task {
-//            await analyzeRequsetAsync()
-//        }
+        Task {
+            await analyzeRequsetAsync()
+        }
     }
     
     func analyzeRequest() {
@@ -54,10 +54,10 @@ class SessionViewController: UIViewController {
         // cachPolicy -> .reloadIgnoringLocalAndRemoteCacheData, .reloadIgnoringLocalCacheData, .reloadRevalidatingCacheData, .returnCacheDataDontLoad, .returnCacheDataElseLoad, u.seProtocolCachePolicy
     }
     
-//    func analyzeRequsetAsync() async {
-//        guard let url = URL(string: "www.naver.com") else { return }
-//        async let (taskTwoData, taskTwoResponse) = session1.data(from: url)
-//
-//    }
+    func analyzeRequsetAsync() async {
+        guard let url = URL(string: "www.naver.com") else { return }
+        async let (taskTwoData, taskTwoResponse) = session1.data(from: url)
+
+    }
 
 }
