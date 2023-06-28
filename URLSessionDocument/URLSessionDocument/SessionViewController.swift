@@ -17,10 +17,16 @@ class SessionViewController: UIViewController {
     private let session6 = URLSession(configuration: .default, delegate: nil, delegateQueue: .main)
         // delegate: URLSessionDelegate?, delegateQueue: OperationQueue?
     
+    private var testData: Data?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .lightGray
         analyzeRequest()
+        
+//        Task {
+//            await analyzeRequsetAsync()
+//        }
     }
     
     func analyzeRequest() {
@@ -28,20 +34,30 @@ class SessionViewController: UIViewController {
         let request = URLRequest(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 3)
         
         session1.sessionDescription = "Session One with Shared"
-        let kkk = session1.dataTask(with: request)
-//        { data, response, error in
-//
-//
-//        }
+        let taskOneDataTask = session1.dataTask(with: request) { [weak self] data, response, error in
+            if error != nil {
+                print(error!)
+                print("404 Error")
+                return
+            }
+            
+            guard let data else { return }
+            print(data)
+            
+            self?.testData = data
+        }
         
         let defaultRequest = URLRequest(url: url)
         print(defaultRequest.cachePolicy) // default cachePolicy 는 .useProtocolCachePolicy 다.
         print(defaultRequest.timeoutInterval) // default timeoutInterval 는 60.0s 다.
 
         // cachPolicy -> .reloadIgnoringLocalAndRemoteCacheData, .reloadIgnoringLocalCacheData, .reloadRevalidatingCacheData, .returnCacheDataDontLoad, .returnCacheDataElseLoad, u.seProtocolCachePolicy
-        
-        
-        
     }
+    
+//    func analyzeRequsetAsync() async {
+//        guard let url = URL(string: "www.naver.com") else { return }
+//        async let (taskTwoData, taskTwoResponse) = session1.data(from: url)
+//
+//    }
 
 }
