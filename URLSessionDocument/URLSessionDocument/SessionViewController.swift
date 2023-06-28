@@ -26,12 +26,22 @@ class SessionViewController: UIViewController {
     func analyzeRequest() {
         guard let url = URL(string: "www.naver.com") else { return }
         let request = URLRequest(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 3)
-
+        
+        session1.sessionDescription = "Session One with Shared"
+        let kkk = session1.dataTask(with: request)
+//        { data, response, error in
+//
+//
+//        }
+        
         let defaultRequest = URLRequest(url: url)
         print(defaultRequest.cachePolicy) // default cachePolicy 는 .useProtocolCachePolicy 다.
         print(defaultRequest.timeoutInterval) // default timeoutInterval 는 60.0s 다.
 
         // cachPolicy -> .reloadIgnoringLocalAndRemoteCacheData, .reloadIgnoringLocalCacheData, .reloadRevalidatingCacheData, .returnCacheDataDontLoad, .returnCacheDataElseLoad, u.seProtocolCachePolicy
+        
+        
+        
     }
 
 }
