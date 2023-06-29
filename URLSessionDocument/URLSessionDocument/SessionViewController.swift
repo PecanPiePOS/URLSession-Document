@@ -34,7 +34,7 @@ class SessionViewController: UIViewController {
         let request = URLRequest(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 3)
         
         session1.sessionDescription = "Session One with Shared"
-        let taskOneDataTask = session1.dataTask(with: request) { [weak self] data, response, error in
+        session1.dataTask(with: request) { [weak self] data, response, error in
             if error != nil {
                 print(error!)
                 print("404 Error")
@@ -45,6 +45,7 @@ class SessionViewController: UIViewController {
             print(data)
             
             self?.testData = data
+            print(self?.testData as Any)
         }
         
         let defaultRequest = URLRequest(url: url)
@@ -57,7 +58,16 @@ class SessionViewController: UIViewController {
     func analyzeRequsetAsync() async {
         guard let url = URL(string: "www.naver.com") else { return }
         async let (taskTwoData, taskTwoResponse) = session1.data(from: url)
-
+        
+        do {
+            let data = try await taskTwoData
+            let response = try await taskTwoResponse
+            
+            self.testData = data
+            print(response)
+        } catch {
+            print(error)
+        }
     }
 
 }
