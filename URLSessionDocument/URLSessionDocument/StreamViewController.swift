@@ -25,7 +25,7 @@ class StreamViewController: UIViewController {
             fatalError("On return of `getBoundStreams`, both `inputStream` and `outputStream` will contain non-nil streams.")
         }
         
-//        output.delegate = self
+        output.delegate = self
         output.schedule(in: .current, forMode: .default)
         output.open()
         
@@ -38,4 +38,13 @@ class StreamViewController: UIViewController {
     }
 }
 
+extension StreamViewController: StreamDelegate {
+    
+}
+
+extension StreamViewController: URLSessionTaskDelegate {
+    func urlSession(_ session: URLSession, task: URLSessionTask, needNewBodyStream completionHandler: @escaping (InputStream?) -> Void) {
+        completionHandler(boundStreams.input)
+    }
+}
 
