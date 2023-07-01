@@ -18,6 +18,7 @@
 		5805381E2A4AA3580043B136 /* URLSessionDocumentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5805381D2A4AA3580043B136 /* URLSessionDocumentTests.swift */; };
 		580538282A4AA3580043B136 /* URLSessionDocumentUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 580538272A4AA3580043B136 /* URLSessionDocumentUITests.swift */; };
 		5805382A2A4AA3580043B136 /* URLSessionDocumentUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 580538292A4AA3580043B136 /* URLSessionDocumentUITestsLaunchTests.swift */; };
+		5824D2052A5053BE000844C2 /* DownloadTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5824D2042A5053BE000844C2 /* DownloadTaskViewController.swift */; };
 		584131482A4D859D00E20215 /* StreamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584131472A4D859D00E20215 /* StreamViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +53,7 @@
 		580538232A4AA3580043B136 /* URLSessionDocumentUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = URLSessionDocumentUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		580538272A4AA3580043B136 /* URLSessionDocumentUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionDocumentUITests.swift; sourceTree = "<group>"; };
 		580538292A4AA3580043B136 /* URLSessionDocumentUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionDocumentUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		5824D2042A5053BE000844C2 /* DownloadTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadTaskViewController.swift; sourceTree = "<group>"; };
 		584131472A4D859D00E20215 /* StreamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -110,6 +112,7 @@
 				5805380A2A4AA3570043B136 /* URLSessionDocumentViewController.swift */,
 				5803F0482A4C4E25002FB112 /* SessionViewController.swift */,
 				584131472A4D859D00E20215 /* StreamViewController.swift */,
+				5824D2042A5053BE000844C2 /* DownloadTaskViewController.swift */,
 				5805380F2A4AA3580043B136 /* Assets.xcassets */,
 				580538112A4AA3580043B136 /* LaunchScreen.storyboard */,
 				580538142A4AA3580043B136 /* Info.plist */,
@@ -276,6 +279,7 @@
 				5805380B2A4AA3570043B136 /* URLSessionDocumentViewController.swift in Sources */,
 				5803F0492A4C4E25002FB112 /* SessionViewController.swift in Sources */,
 				580538072A4AA3570043B136 /* AppDelegate.swift in Sources */,
+				5824D2052A5053BE000844C2 /* DownloadTaskViewController.swift in Sources */,
 				580538092A4AA3570043B136 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
