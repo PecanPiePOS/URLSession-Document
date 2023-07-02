@@ -11,6 +11,7 @@ class DownloadTaskViewController: UIViewController {
     
     private let session1: URLSession = URLSession(configuration: .default)
     private lazy var session2: URLSession = URLSession(configuration: .default, delegate: self, delegateQueue: nil)
+    private var downloadTask: URLSessionDownloadTask?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +33,13 @@ class DownloadTaskViewController: UIViewController {
                 print("file error: \(error)")
             }
         }
+    }
+    
+    private func startDownload(url: URL) {
+        let downloadTask = session2.downloadTask(with: url)
+        downloadTask.resume()
+        
+        self.downloadTask = downloadTask
     }
 }
 
