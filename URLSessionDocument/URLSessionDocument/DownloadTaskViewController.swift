@@ -12,6 +12,8 @@ class DownloadTaskViewController: UIViewController {
     private let session1: URLSession = URLSession(configuration: .default)
     private lazy var session2: URLSession = URLSession(configuration: .default, delegate: self, delegateQueue: nil)
     private var downloadTask: URLSessionDownloadTask?
+    private let progressLabel = UILabel()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
