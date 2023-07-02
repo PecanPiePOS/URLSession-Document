@@ -47,4 +47,14 @@ extension DownloadTaskViewController: URLSessionDelegate, URLSessionDownloadDele
     func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, didFinishDownloadingTo location: URL) {
         
     }
+    
+    func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, didWriteData bytesWritten: Int64, totalBytesWritten: Int64, totalBytesExpectedToWrite: Int64) {
+        if downloadTask == self.downloadTask {
+            let calculatedProgress = Float(totalBytesWritten) / Float(totalBytesExpectedToWrite)
+            
+            DispatchQueue.main.async {
+                self.progressLabel.text = self.percentFormatter.string(from:     NSNumber(value: calculatedProgress))
+            }
+        }
+    }
 }
