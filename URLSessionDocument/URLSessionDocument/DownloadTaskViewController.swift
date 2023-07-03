@@ -47,16 +47,42 @@ class DownloadTaskViewController: UIViewController {
 
 extension DownloadTaskViewController: URLSessionDelegate, URLSessionDownloadDelegate {
     func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, didFinishDownloadingTo location: URL) {
+        guard let response = downloadTask.response as? HTTPURLResponse else { return }
+        let statusCode = response.statusCode
         
+        switch statusCode {
+        case 200..<299:
+            break
+        default:
+            print("Error Occured")
+            return
+        }
+        
+        do {
+            let documentsURL = try FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
+            let savedURL = documentsURL.appending(path: location.lastPathComponent)
+            try FileManager.default.moveItem(at: location, to: savedURL)
+        } catch {
+            print(error)
+        }
     }
     
     func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, didWriteData bytesWritten: Int64, totalBytesWritten: Int64, totalBytesExpectedToWrite: Int64) {
+        let percentFormatter = NumberFormatter()
+        percentFormatter.numberStyle = .percent
+        
         if downloadTask == self.downloadTask {
             let calculatedProgress = Float(totalBytesWritten) / Float(totalBytesExpectedToWrite)
             
             DispatchQueue.main.async {
-                self.progressLabel.text = self.percentFormatter.string(from:     NSNumber(value: calculatedProgress))
+                self.progressLabel.text = percentFormatter.string(from:     NSNumber(value: calculatedProgress))
             }
         }
+    }
+}
+
+extension DownloadTaskViewController: UIApplicationDelegate {
+    func application(_ application: UIApplication, handleEventsForBackgroundURLSession identifier: String, completionHandler: @escaping () -> Void) {
+        
     }
 }
