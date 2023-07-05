@@ -20,6 +20,8 @@
 		5805382A2A4AA3580043B136 /* URLSessionDocumentUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 580538292A4AA3580043B136 /* URLSessionDocumentUITestsLaunchTests.swift */; };
 		5824D2052A5053BE000844C2 /* DownloadTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5824D2042A5053BE000844C2 /* DownloadTaskViewController.swift */; };
 		584131482A4D859D00E20215 /* StreamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584131472A4D859D00E20215 /* StreamViewController.swift */; };
+		5875F3592A5584AC00070F6A /* CollectionViewTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5875F3582A5584AC00070F6A /* CollectionViewTestViewController.swift */; };
+		5875F35B2A5584BF00070F6A /* TestCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5875F35A2A5584BF00070F6A /* TestCollectionViewCell.swift */; };
 		58A32A8D2A52E90B0035114E /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A32A8C2A52E90B0035114E /* IntroViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +58,8 @@
 		580538292A4AA3580043B136 /* URLSessionDocumentUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionDocumentUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		5824D2042A5053BE000844C2 /* DownloadTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadTaskViewController.swift; sourceTree = "<group>"; };
 		584131472A4D859D00E20215 /* StreamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamViewController.swift; sourceTree = "<group>"; };
+		5875F3582A5584AC00070F6A /* CollectionViewTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewTestViewController.swift; sourceTree = "<group>"; };
+		5875F35A2A5584BF00070F6A /* TestCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCollectionViewCell.swift; sourceTree = "<group>"; };
 		58A32A8C2A52E90B0035114E /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -119,6 +123,8 @@
 				5805380F2A4AA3580043B136 /* Assets.xcassets */,
 				580538112A4AA3580043B136 /* LaunchScreen.storyboard */,
 				580538142A4AA3580043B136 /* Info.plist */,
+				5875F3582A5584AC00070F6A /* CollectionViewTestViewController.swift */,
+				5875F35A2A5584BF00070F6A /* TestCollectionViewCell.swift */,
 			);
 			path = URLSessionDocument;
 			sourceTree = "<group>";
@@ -281,10 +287,12 @@
 				584131482A4D859D00E20215 /* StreamViewController.swift in Sources */,
 				5805380B2A4AA3570043B136 /* URLSessionDocumentViewController.swift in Sources */,
 				58A32A8D2A52E90B0035114E /* IntroViewController.swift in Sources */,
+				5875F35B2A5584BF00070F6A /* TestCollectionViewCell.swift in Sources */,
 				5803F0492A4C4E25002FB112 /* SessionViewController.swift in Sources */,
 				580538072A4AA3570043B136 /* AppDelegate.swift in Sources */,
 				5824D2052A5053BE000844C2 /* DownloadTaskViewController.swift in Sources */,
 				580538092A4AA3570043B136 /* SceneDelegate.swift in Sources */,
+				5875F3592A5584AC00070F6A /* CollectionViewTestViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

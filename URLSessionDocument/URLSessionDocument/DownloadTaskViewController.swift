@@ -52,6 +52,8 @@ class DownloadTaskViewController: UIViewController {
                 print("file error: \(error)")
             }
         }
+        
+        downloadTask.resume()
     }
     
     private func startDownload(url: URL) {
