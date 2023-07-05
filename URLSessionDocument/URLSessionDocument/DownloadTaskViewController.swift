@@ -11,6 +11,13 @@ class DownloadTaskViewController: UIViewController {
     
     private let session1: URLSession = URLSession(configuration: .default)
     private lazy var session2: URLSession = URLSession(configuration: .default, delegate: self, delegateQueue: nil)
+    private lazy var session3: URLSession = {
+        let configuration = URLSessionConfiguration.background(withIdentifier: "SessionForImages")
+        configuration.isDiscretionary = true
+        configuration.sessionSendsLaunchEvents = true
+        return URLSession(configuration: configuration, delegate: self, delegateQueue: nil)
+    }()
+    
     private var downloadTask: URLSessionDownloadTask?
     private let progressLabel = UILabel()
     
@@ -18,6 +25,16 @@ class DownloadTaskViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+    }
+    
+    private func downloadBackground() {
+        guard let url: URL = URL(string: "www.naver.com") else { return }
+        let backgroundTask = session3.downloadTask(with: url)
+        
+        backgroundTask.earliestBeginDate = Date().addingTimeInterval(60 * 60)
+        backgroundTask.countOfBytesClientExpectsToSend = 200
+        backgroundTask.countOfBytesClientExpectsToReceive = 500 * 1024
+        backgroundTask.resume()
     }
 
     private func downloadFileToURL() {
@@ -78,11 +95,5 @@ extension DownloadTaskViewController: URLSessionDelegate, URLSessionDownloadDele
                 self.progressLabel.text = percentFormatter.string(from:     NSNumber(value: calculatedProgress))
             }
         }
-    }
-}
-
-extension DownloadTaskViewController: UIApplicationDelegate {
-    func application(_ application: UIApplication, handleEventsForBackgroundURLSession identifier: String, completionHandler: @escaping () -> Void) {
-        
     }
 }
