@@ -36,7 +36,7 @@ class CollectionViewTestViewController: UIViewController {
         view.addSubview(puzzleCollectionView)
         
         puzzleCollectionView.snp.makeConstraints {
-            $0.leading.equalToSuperview().inset(20)
+            $0.horizontalEdges.equalToSuperview().inset(20)
             $0.top.equalToSuperview().inset(100)
             $0.height.equalTo(240)
         }
@@ -44,16 +44,36 @@ class CollectionViewTestViewController: UIViewController {
 }
 
 extension CollectionViewTestViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        3
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 12
+        return 5
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return UICollectionViewCell()
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "test1", for: indexPath) as? TestCollectionViewCell else { return UICollectionViewCell() }
+        var imageNumber: String = ""
+        
+        switch indexPath.section {
+        case 0:
+            imageNumber = "puzzleElement\(indexPath.item + 1)"
+        case 1:
+            imageNumber = "puzzleElement\(indexPath.item + 6)"
+        case 2:
+            imageNumber = "puzzleElement\(indexPath.item + 11)"
+        default:
+            break
+        }
+        
+        
+        cell.configureCell(imageName: imageNumber)
+        return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print(indexPath.item)
+        print(indexPath.item + 1, indexPath.section)
     }
 }
 
@@ -61,9 +81,10 @@ extension CollectionViewTestViewController {
     private func setFlowLayout() -> UICollectionViewFlowLayout {
         let layout = UICollectionViewFlowLayout()
         
-        layout.itemSize = CGSize(width: 60, height: 60)
-        layout.minimumLineSpacing = 3
-        layout.minimumInteritemSpacing = 3
+        layout.itemSize = CGSize(width: 80, height: 80)
+        layout.minimumLineSpacing = 0
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: -10, right: 0)
+        layout.minimumInteritemSpacing = -28.5
         
         return layout
     }
