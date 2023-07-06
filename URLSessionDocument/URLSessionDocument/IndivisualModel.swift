@@ -21,13 +21,11 @@ struct IndivisualData: Codable {
     let isReviewDay: Bool
 }
 
-    // MARK: MyPuzzle
 struct MyPuzzle: Codable {
     let nickname: String
     let puzzleCount: Int
 }
 
-    // MARK: UserPuzzleBoard
 struct UserPuzzleBoard: Codable {
     let reviewDay, reviewDate: String
     let reviewId: Int?
