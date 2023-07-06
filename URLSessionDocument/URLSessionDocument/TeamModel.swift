@@ -8,21 +8,16 @@
 import Foundation
 
     // MARK: - Welcome
-struct Team: Codable {
+struct TeamDashboardModel: Codable {
     let status: Int
     let success: Bool
     let message: String
-    let data: DataClass
+    let data: TeamData
 }
 
-struct DataClass: Codable {
+struct TeamData: Codable {
     let myPuzzle: MyPuzzle
     let teamPuzzleBoard: [TeamPuzzleBoard]
-}
-
-struct MyPuzzle: Codable {
-    let nickname: String
-    let puzzleCount: Int
 }
 
 struct TeamPuzzleBoard: Codable {

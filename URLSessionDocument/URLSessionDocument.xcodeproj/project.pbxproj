@@ -23,6 +23,8 @@
 		5875F3592A5584AC00070F6A /* CollectionViewTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5875F3582A5584AC00070F6A /* CollectionViewTestViewController.swift */; };
 		5875F35B2A5584BF00070F6A /* TestCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5875F35A2A5584BF00070F6A /* TestCollectionViewCell.swift */; };
 		58A32A8D2A52E90B0035114E /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A32A8C2A52E90B0035114E /* IntroViewController.swift */; };
+		58B7833F2A56C29A006F116D /* IndivisualModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B7833E2A56C29A006F116D /* IndivisualModel.swift */; };
+		58B783412A56C89B006F116D /* TeamModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B783402A56C89B006F116D /* TeamModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +63,8 @@
 		5875F3582A5584AC00070F6A /* CollectionViewTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewTestViewController.swift; sourceTree = "<group>"; };
 		5875F35A2A5584BF00070F6A /* TestCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCollectionViewCell.swift; sourceTree = "<group>"; };
 		58A32A8C2A52E90B0035114E /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
+		58B7833E2A56C29A006F116D /* IndivisualModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndivisualModel.swift; sourceTree = "<group>"; };
+		58B783402A56C89B006F116D /* TeamModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +129,8 @@
 				580538142A4AA3580043B136 /* Info.plist */,
 				5875F3582A5584AC00070F6A /* CollectionViewTestViewController.swift */,
 				5875F35A2A5584BF00070F6A /* TestCollectionViewCell.swift */,
+				58B7833E2A56C29A006F116D /* IndivisualModel.swift */,
+				58B783402A56C89B006F116D /* TeamModel.swift */,
 			);
 			path = URLSessionDocument;
 			sourceTree = "<group>";
@@ -291,6 +297,8 @@
 				5803F0492A4C4E25002FB112 /* SessionViewController.swift in Sources */,
 				580538072A4AA3570043B136 /* AppDelegate.swift in Sources */,
 				5824D2052A5053BE000844C2 /* DownloadTaskViewController.swift in Sources */,
+				58B7833F2A56C29A006F116D /* IndivisualModel.swift in Sources */,
+				58B783412A56C89B006F116D /* TeamModel.swift in Sources */,
 				580538092A4AA3570043B136 /* SceneDelegate.swift in Sources */,
 				5875F3592A5584AC00070F6A /* CollectionViewTestViewController.swift in Sources */,
 			);
