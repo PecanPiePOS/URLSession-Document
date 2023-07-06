@@ -12,10 +12,10 @@ struct TeamDashboardModel: Codable {
     let status: Int
     let success: Bool
     let message: String
-    let data: TeamData
+    let data: TeamDashboardData
 }
 
-struct TeamData: Codable {
+struct TeamDashboardData: Codable {
     let myPuzzle: MyPuzzle
     let teamPuzzleBoard: [TeamPuzzleBoard]
 }
@@ -39,4 +39,19 @@ struct TeamProjectRank: Codable {
     let memberPuzzleCount: Int
 }
 
-    // MARK: - TeamProject
+    // MARK: - TeamProjectMemberInfoModel
+struct TeamProjectMemberInfoModel: Codable {
+    let status: Int
+    let success: Bool
+    let message: String
+    let data: [TeamProjectReviewData]
+}
+
+struct TeamProjectReviewData: Codable {
+    let reviewDay, reviewDate: String
+    let reviewWriters, nonReviewWriters: [TeamProjectMemberData]
+}
+
+struct TeamProjectMemberData: Codable {
+    let memberNickname, memberRole: String
+}
