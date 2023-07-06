@@ -47,15 +47,15 @@ struct ActionPlan: Codable {
 }
 
 
-    // MARK: - OnGoingProjectsModel
-struct OnGoingProjectsModel: Codable {
+    // MARK: - OngoingProjectsModel
+struct OngoingProjectsModel: Codable {
     let status: Int
     let success: Bool
     let message: String
-    let data: [ProjectInfo]
+    let data: [OngoingProjectInfo]
 }
 
-struct ProjectInfo: Codable {
+struct OngoingProjectInfo: Codable {
     let userProjectId: Int
     let projectName: String
 }
